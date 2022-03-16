@@ -1,8 +1,6 @@
 #!/bin/bash
 
 case $1 in
-	upgrade)
-		paru ;;
 	install)
 		case $2 in
 			"--yes")
@@ -13,13 +11,13 @@ case $1 in
 	remove)
 		paru -R "${@:2}" ;;
 	update)
-		paru -Sy ;;
+		paru -Sy "${@:2}" ;;
 	upgrade)
 		case $2 in
 			"--yes")
-				paru -Syu --noconfirm ;;
+				paru -Syu --noconfirm "${@:3}" ;;
 			*)
-				paru -Syu ;;
+				paru -Syu "${@:2}";;
 		esac ;;
 	*)
 		paru "${@:2}" ;;
