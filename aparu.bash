@@ -137,6 +137,6 @@ _pacman_file() {
 }
 
 complete -F _paru aparu
-complete -F _paru ./aparu.sh
+# complete -F _paru ./aparu.sh
 
 # ex:et ts=2 sw=2 ft=sh
