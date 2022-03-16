@@ -136,8 +136,8 @@ _pacman_file() {
   _filedir 'pkg.tar*'
 }
 
-complete -F _paru apr
 complete -F _paru aparu
+complete -F _paru apr
 # complete -F _paru ./aparu.sh
 
 # ex:et ts=2 sw=2 ft=sh
