@@ -4,9 +4,9 @@ case $1 in
 	install)
 		case $2 in
 			"--yes")
-				paru -S --noconfirm "${@:3}" ;;
+				paru -S --noconfirm --sudoloop "${@:3}" ;;
 			*)
-				paru -S "${@:2}" ;;
+				paru -S --sudoloop "${@:2}" ;;
 		esac ;;
 	remove)
 		paru -R "${@:2}" ;;
@@ -15,12 +15,12 @@ case $1 in
 	upgrade)
 		case $2 in
 			"--yes")
-				paru -Syu --noconfirm "${@:3}" ;;
+				paru -Syu --noconfirm --sudoloop "${@:3}" ;;
 			*)
-				paru -Syu "${@:2}";;
+				paru -Syu --sudoloop "${@:2}";;
 		esac ;;
 	*)
-		paru "${@:2}" ;;
+		paru --sudoloop "${@:2}" ;;
 esac
 
 #? how to put --yes in any position? Simple way, please
